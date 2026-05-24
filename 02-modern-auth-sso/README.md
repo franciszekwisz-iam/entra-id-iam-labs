@@ -6,7 +6,7 @@ This section documents my practical hands-on experience and theoretical understa
 
 ## Lab 3.1: Identity Architecture Foundations (IdP vs SP)
 
-### 1. Theoretical Concepts (Interview QA)
+### 1. Theoretical Concepts 
 * **Authentication (AuthN) vs. Authorization (AuthZ):** * *AuthN* is the process of verifying **who you are** (e.g., passwords, MFA prompts).
     * *AuthZ* is the process of verifying **what you can do** (e.g., RBAC roles, application permissions).
 * **Identity Provider (IdP):** The central authority that manages digital identities, authenticates users, and issues security tokens (e.g., Microsoft Entra ID).
@@ -22,7 +22,7 @@ I have initialized the Entra ID tenant and navigated to the Enterprise Applicati
 
 ## Lab 3.2: SAML 2.0 Protocol (Enterprise SSO)
 
-### 1. Theoretical Concepts (Interview QA)
+### 1. Theoretical Concepts 
 * **SAML 2.0 Assertion:** An XML-based token issued by the IdP, cryptographically signed, containing user attributes (*Claims*) and group memberships sent to the Service Provider (SP).
 * **Federation Metadata XML:** A configuration file exchanged between IdP and SP to establish an explicit trust relationship. It contains Single Sign-On URLs, Entity IDs, and public keys (certificates).
 * **Key Rollover Concept:** Metadata files often contain multiple `<X509Certificate>` tags. This ensures high availability during certificate expiration phases (one active key, one future rolling key) or separates signing functions from encryption functions.
