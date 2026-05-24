@@ -38,3 +38,26 @@ I have provisioned a custom Non-Gallery Enterprise Application named `Test-SAML-
     * `<SingleSignOnService>`: Specifies the explicit Entra ID endpoint where SAML AuthnRequests must be sent.
 
 *<img width="1824" height="915" alt="image" src="https://github.com/user-attachments/assets/0adba110-4e06-4df3-b58d-0d3539966365" />*
+---
+
+## Lab 3.3: OAuth 2.0 Protocol & JWT Token Anatomy
+
+### 1. Theoretical Concepts 
+* **OAuth 2.0 Purpose:** It is strictly an **Authorization (AuthZ)** framework designed to grant applications limited access to user accounts/APIs. It is **not** designed or used for user authentication.
+* **JWT (JSON Web Token) Structure:** Composed of three distinct parts separated by dots (`.`):
+    * *Header:* Specifies the token type and cryptographic signing algorithm.
+    * *Payload (Claims):* Contains the core data, such as token metadata, user context, and granted privileges.
+    * *Signature:* Formed by signing the header and payload using a private key to guarantee tamper-proof security.
+* **Access vs. Refresh Tokens:**
+    * *Access Token:* Short-lived cryptographic string presented to APIs for instant resource access.
+    * *Refresh Token:* Long-lived credential used exclusively to request subsequent Access Tokens without forcing user re-authentication.
+
+### 2. Lab Implementation & Verification
+I utilized the Microsoft `jwt.ms` deep-decoder engine to dissect a standard enterprise JSON Web Token (JWT) and evaluate its structural security claims.
+
+* **Critical Claims Identified:**
+    * `iss` (Issuer): Confirms the specific Identity Provider authority that minted the token.
+    * `aud` (Audience): Restricts token usage to the intended target resource API.
+    * `exp` (Expiration): Enforces token lifecycle constraints by defining a strict UNIX timestamp boundary.
+    * `scp`/`roles` (Scopes/Permissions): Lists the granular API capabilities granted to the holder.
+    * <img width="1035" height="1119" alt="image" src="https://github.com/user-attachments/assets/c2553331-8405-4e81-8270-51c9fda0320e" />*
