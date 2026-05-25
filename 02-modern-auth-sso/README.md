@@ -37,7 +37,7 @@ I have provisioned a custom Non-Gallery Enterprise Application named `Test-SAML-
     * `<X509Certificate>`: Contains the public key used by the SP to verify the cryptographic signature of assertions.
     * `<SingleSignOnService>`: Specifies the explicit Entra ID endpoint where SAML AuthnRequests must be sent.
 
-*<img width="1824" height="915" alt="image" src="https://github.com/user-attachments/assets/0adba110-4e06-4df3-b58d-0d3539966365" />*
+*<img width="1824" height="915" alt="image" src="https://github.com/user-attachments/assets/0adba110-4e06-4df3-b58d-0d3539966365" />
 ---
 
 ## Lab 3.3: OAuth 2.0 Protocol & JWT Token Anatomy
