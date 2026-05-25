@@ -78,3 +78,18 @@ I extracted the OpenID Connect metadata document endpoint from the App Registrat
     * `token_endpoint`: The API endpoint where applications exchange authorization codes for access and ID tokens.
     * `jwks_uri`: The endpoint exposing public signing certificates used for token signature validation.
     * <img width="1843" height="278" alt="image" src="https://github.com/user-attachments/assets/b1702588-1519-45c7-be99-70beded6cfe3" />
+---
+
+## Lab 3.5: Programmatic Token Acquisition via PowerShell (Service Principal)
+
+### 1. Theoretical Concepts 
+* **What is a Service Principal?** While an *App Registration* is the global definition of an application, a *Service Principal* is the local representation (the identity object) of that application within a specific tenant. It acts as a "machine account" (non-human identity) used for automated processes.
+* **OAuth 2.0 Client Credentials Grant Flow:** This specific authorization flow is designed strictly for machine-to-machine (M2M) communication. Because there is no human user interaction, no browser session is initialized, and no MFA can be prompted. Authentication relies entirely on a secure cryptographic pair: the `Application (Client) ID` and a `Client Secret` (or Certificate).
+
+### 2. Lab Implementation & Verification
+I provisioned a secure **Client Secret** within the application registration console and executed a native PowerShell script utilizing `Invoke-RestMethod` to mimic an automated system requesting an administrative Access Token directly from the Entra ID v2.0 Token Endpoint.
+
+* **Script Mechanics & Request Structure:**
+    * **HTTP Method:** `POST`
+    * **Content-Type:** `application/x-www-form-urlencoded`
+    * **Payload Attributes:** Encapsulated `grant_type=client_credentials`, target resource `scope=https://graph.microsoft.com/.default`, alongside the application's credentials.
