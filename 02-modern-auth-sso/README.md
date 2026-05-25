@@ -93,3 +93,4 @@ I provisioned a secure **Client Secret** within the application registration con
     * **HTTP Method:** `POST`
     * **Content-Type:** `application/x-www-form-urlencoded`
     * **Payload Attributes:** Encapsulated `grant_type=client_credentials`, target resource `scope=https://graph.microsoft.com/.default`, alongside the application's credentials.
+<img width="1454" height="653" alt="image" src="https://github.com/user-attachments/assets/0aa5d481-9136-432b-97f9-4c6b20d7e9f4" />
