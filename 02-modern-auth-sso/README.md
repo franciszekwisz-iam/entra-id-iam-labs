@@ -77,4 +77,4 @@ I extracted the OpenID Connect metadata document endpoint from the App Registrat
     * `authorization_endpoint`: The target location where users are redirected for interactive authentication.
     * `token_endpoint`: The API endpoint where applications exchange authorization codes for access and ID tokens.
     * `jwks_uri`: The endpoint exposing public signing certificates used for token signature validation.
-    * <img width="1845" height="268" alt="image" src="https://github.com/user-attachments/assets/0d04c385-a7c5-4454-98eb-ba9ee6d4cc7b" />*
+    * <img width="1843" height="278" alt="image" src="https://github.com/user-attachments/assets/b1702588-1519-45c7-be99-70beded6cfe3" />*
