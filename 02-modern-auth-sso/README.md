@@ -61,3 +61,20 @@ I utilized the Microsoft `jwt.ms` deep-decoder engine to dissect a standard ente
     * `exp` (Expiration): Enforces token lifecycle constraints by defining a strict UNIX timestamp boundary.
     * `scp`/`roles` (Scopes/Permissions): Lists the granular API capabilities granted to the holder.
     * <img width="1035" height="1119" alt="image" src="https://github.com/user-attachments/assets/c2553331-8405-4e81-8270-51c9fda0320e" />*
+---
+
+## Lab 3.4: OpenID Connect (OIDC) & Discovery Endpoint
+
+### 1. Theoretical Concepts 
+* **What is OpenID Connect (OIDC)?** OIDC is an identity layer built on top of the OAuth 2.0 framework. While OAuth 2.0 provides an *Access Token* for authorization, OIDC introduces an **ID Token** (specifically formatted as a JWT) to handle **Authentication (AuthN)**, telling the application exactly who the logged-in user is.
+* **The `.well-known` Configuration Endpoint:** In OIDC, instead of manually exchanging massive XML metadata files (like in SAML), identity providers expose a standardized, public JSON document at a well-known path (`/.well-known/openid-configuration`). 
+* **Dynamic Configuration & `jwks_uri`:** Applications read this JSON document dynamically to discover login endpoints, token endpoints, and most importantly, the `jwks_uri`. The `jwks_uri` contains the public keys required to verify the cryptographic signatures of incoming JWT tokens instantly.
+
+### 2. Lab Implementation & Verification
+I extracted the OpenID Connect metadata document endpoint from the App Registrations blade in Microsoft Entra ID and inspected the live JSON configuration payload.
+
+* **Key endpoints verified in the JSON payload:**
+    * `authorization_endpoint`: The target location where users are redirected for interactive authentication.
+    * `token_endpoint`: The API endpoint where applications exchange authorization codes for access and ID tokens.
+    * `jwks_uri`: The endpoint exposing public signing certificates used for token signature validation.
+    * <img width="1845" height="268" alt="image" src="https://github.com/user-attachments/assets/0d04c385-a7c5-4454-98eb-ba9ee6d4cc7b" />*
