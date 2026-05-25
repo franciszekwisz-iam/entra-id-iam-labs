@@ -60,7 +60,7 @@ I utilized the Microsoft `jwt.ms` deep-decoder engine to dissect a standard ente
     * `aud` (Audience): Restricts token usage to the intended target resource API.
     * `exp` (Expiration): Enforces token lifecycle constraints by defining a strict UNIX timestamp boundary.
     * `scp`/`roles` (Scopes/Permissions): Lists the granular API capabilities granted to the holder.
-    * <img width="1035" height="1119" alt="image" src="https://github.com/user-attachments/assets/c2553331-8405-4e81-8270-51c9fda0320e" />*
+    * <img width="1035" height="1119" alt="image" src="https://github.com/user-attachments/assets/c2553331-8405-4e81-8270-51c9fda0320e" />
 ---
 
 ## Lab 3.4: OpenID Connect (OIDC) & Discovery Endpoint
