@@ -14,4 +14,6 @@ Przed aktywacją polityki użyłem narzędzia symulacyjnego **What If** w Micros
 
 Poniższy zrzut ekranu potwierdza, że polityka poprawnie kwalifikuje się do uruchomienia (`Policies that will apply`) w trybie raportu bez przerywania pracy użytkownika:
 
-![Symulacja What If](<img width="2552" height="1745" alt="screencapture-entra-microsoft-2026-05-28-20_18_52" src="https://github.com/user-attachments/assets/52683a8e-b4b5-4e8d-a933-99ae10f04f63" />)
+![Symulacja What If]
+<img width="2552" height="1745" alt="screencapture-entra-microsoft-2026-05-28-20_18_52" src="https://github.com/user-attachments/assets/bb18829f-5537-4195-9860-70e0b106df78" />
+
