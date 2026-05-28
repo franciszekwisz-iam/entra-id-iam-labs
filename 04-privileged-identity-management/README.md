@@ -17,4 +17,4 @@ This module focuses on the **security auditing of privileged roles** within Micr
 1. Run the script: `./Configure-PIMRoles.ps1`
 2. Authenticate with your Global Administrator or Privileged Role Administrator account.
 3. Review the generated table in your terminal to identify potential security risks (e.g., permanent Global Admin assignments).
-![alt text](image.png)
+![alt text](assets/image.png)
