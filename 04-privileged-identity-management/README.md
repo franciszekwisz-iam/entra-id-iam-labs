@@ -1,15 +1,20 @@
-# Module 04: Privileged Identity Management (PIM) for Entra ID Roles
+# Module 04: Privileged Identity Management (PIM) Auditing
 
 ## Project Overview
-This module demonstrates the implementation of a **Just-In-Time (JIT)** access model for highly privileged directory roles within Microsoft Entra ID. The goal is to enforce the principle of least privilege, eliminate standing access, and provide auditing capabilities for administrative actions.
+This module focuses on the **security auditing of privileged roles** within Microsoft Entra ID. It leverages the Microsoft Graph API to programmatically identify accounts with permanent (Assigned) administrative privileges, which is a critical step in transitioning from "standing access" to a "Zero Trust / Just-In-Time" (JIT) model.
 
-## Implemented Architecture
-- **Eligible Assignments**: Administrative roles (e.g., Global Administrator, Helpdesk Administrator) are designated as "Eligible" rather than "Active", requiring explicit activation.
-- **Activation Safeguards**:
-  - **Multi-Factor Authentication (MFA)** enforcement prior to activation.
-  - Mandatory business justification and ticketing system reference.
-  - Maximum activation duration capped at **2 hours**.
-  - **Approval Workflow**: High-tier roles (like Global Administrator) require explicit peer approval before activation.
+## Features
+- **Automated PIM Audit**: Queries the tenant to retrieve all active role assignments.
+- **Identity Resolution**: Maps unique Principal IDs to User Principal Names (UPN) for readable reporting.
+- **Security Insight**: Differentiates between permanent assignments and eligible roles, helping identify high-risk access configurations.
 
-## Automation & Reporting
-The included PowerShell script (`Configure-PIMRoles.ps1`) utilizes the `Microsoft.Graph.Identity.Governance` module to dynamically audit and export current PIM assignment schedules, validating the tenant's security posture and compliance state.
+## Prerequisites
+- PowerShell 7.x
+- `Microsoft.Graph` module installed.
+- Appropriate API permissions: `RoleManagement.Read.Directory`, `PrivilegedAccess.Read.AzureAD`.
+
+## How to use
+1. Run the script: `./Configure-PIMRoles.ps1`
+2. Authenticate with your Global Administrator or Privileged Role Administrator account.
+3. Review the generated table in your terminal to identify potential security risks (e.g., permanent Global Admin assignments).
+![alt text](image.png)
