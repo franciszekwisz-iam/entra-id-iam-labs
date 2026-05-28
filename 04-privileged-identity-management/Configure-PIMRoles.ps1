@@ -4,11 +4,21 @@ Connect-MgGraph -Scopes "RoleManagement.Read.Directory", "PrivilegedAccess.Read.
 # Pobranie definicji ról i przypisań PIM dla Entra ID
 Write-Host "Pobieranie konfiguracji ról PIM..." -ForegroundColor Cyan
 
-$PimAssignments = Get-MgRoleManagementDirectoryRoleAssignmentSchedule -Filter "status eq 'Provisioned'" -ExpandProperty "RoleDefinition,Principal"
+# Pobranie definicji ról
+$PimAssignments = Get-MgRoleManagementDirectoryRoleAssignmentSchedule -Filter "status eq 'Provisioned'"
 
-# Wyświetlenie ról w czytelny sposób
-$PimAssignments | Select-Object `
-    @{Name="Użytkownik";Expression={$_.Principal.DisplayName}},
-    @{Name="Adres UPN";Expression={$_.Principal.UserPrincipalName}},
-    @{Name="Rola Entra ID";Expression={$_.RoleDefinition.DisplayName}},
-    @{Name="Typ Przypisania";Expression={$_.AssignmentType}} | Format-Table -AutoSize
+# Przetwarzanie i wyświetlanie
+$Report = foreach ($Assignment in $PimAssignments) {
+    # Pobieramy szczegóły użytkownika na podstawie ID (PrincipalId)
+    $User = Get-MgUser -UserId $Assignment.PrincipalId -ErrorAction SilentlyContinue
+    $Role = Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $Assignment.RoleDefinitionId
+
+    [PSCustomObject]@{
+        "Użytkownik"       = if ($User) { $User.DisplayName } else { "Nieznany/Grupa" }
+        "Adres UPN"        = if ($User) { $User.UserPrincipalName } else { $Assignment.PrincipalId }
+        "Rola Entra ID"    = $Role.DisplayName
+        "Typ Przypisania"  = $Assignment.AssignmentType
+    }
+}
+
+$Report | Format-Table -AutoSize
