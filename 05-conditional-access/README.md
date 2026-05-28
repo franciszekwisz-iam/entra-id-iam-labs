@@ -1,19 +1,20 @@
-# Moduł 05: Conditional Access - Zarządzanie Dostępem Warunkowym
+# Module 05: Conditional Access - Policy Management
 
-## Cel projektu
-Wdrożenie i przetestowanie polityki Conditional Access (Dostęp Warunkowy) w celu wymuszenia wieloskładnikowego uwierzytelniania (MFA) podczas dostępu do aplikacji firmowych, minimalizując ryzyko nieautoryzowanego dostępu.
+## Project Objective
+Deploy and validate a Conditional Access policy to enforce Multi-Factor Authentication (MFA) for cloud application access, effectively mitigating the risk of unauthorized access and credential-based attacks.
 
-## Konfiguracja Polityki: App_Access_MFA_Required
-- **Zakres (Assignments):** Wszyscy użytkownicy (All users)
-- **Zasoby (Target resources):** Wybrane aplikacje chmurowe (np. Office 365 / Bing)
-- **Kontrola dostępu (Access controls):** Wymagaj wieloskładnikowego uwierzytelniania (Require MFA)
-- **Stan (State):** `Report-only` (Tryb audytu)
+## Policy Configuration: App_Access_MFA_Required
+- **Assignments:** All users
+- **Target resources:** Selected cloud apps (e.g., Office 365 / Bing)
+- **Access controls:** Require multi-factor authentication (Require MFA)
+- **State:** `Report-only` (Audit mode)
 
-## Walidacja i Testowanie (Narzędzie What If)
-Przed aktywacją polityki użyłem narzędzia symulacyjnego **What If** w Microsoft Entra ID, aby zweryfikować jej działanie dla użytkownika testowego (`Ala Niejaka`) logującego się z platformy Android.
+## Validation and Testing (What If Tool)
+Prior to enforcing the policy, I utilized the **What If** simulation tool within Microsoft Entra ID to verify its behavior for a test user (`Ala Niejaka`) signing in from an Android platform.
 
-Poniższy zrzut ekranu potwierdza, że polityka poprawnie kwalifikuje się do uruchomienia (`Policies that will apply`) w trybie raportu bez przerywania pracy użytkownika:
+The screenshot below confirms that the policy correctly triggers under the specified conditions (`Policies that will apply`) in report-only mode, ensuring zero impact on user productivity during the evaluation phase:
 
-![Symulacja What If]
-<img width="2552" height="1745" alt="screencapture-entra-microsoft-2026-05-28-20_18_52" src="https://github.com/user-attachments/assets/bb18829f-5537-4195-9860-70e0b106df78" />
+![What If Simulation]
+<img width="2552" height="1745" alt="screencapture-entra-microsoft-2026-05-28-20_18_52" src="https://github.com/user-attachments/assets/190932b8-1913-4fc5-86be-fdfe8e127911" />
+
 
