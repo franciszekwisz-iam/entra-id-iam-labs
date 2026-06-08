@@ -18,10 +18,6 @@ During the initial *Provision on demand* phase, a critical schema mismatch error
 
 The target system API rejected the incoming request with a `HTTP 400 Bad Request` because Microsoft Entra ID's default state did not include the mandatory `emails` attribute required by the target SCIM server core schema.
 
-#### Proof of Issue Resolution:
-Below is the execution state highlighting the initial mapping failure due to the missing required email field:
-
-![SCIM Attribute Mapping Failure](images/01_connection_error.png)
 
 #### Corrective Actions Taken:
 1. Navigated to the **Attribute Mapping** settings of the Enterprise Application.
@@ -35,7 +31,7 @@ With the schema correctly aligned, a *Provision on demand* cycle was triggered f
 The synchronization engine successfully verified the user scope, matched identity metrics between boundaries, and executed the remote resource creation payload API call.
 
 #### Proof of Successful Provisioning:
-![SCIM Provisioning On Demand Success](images/02_provisioning_success.png)
+![SCIM Provisioning On Demand Success](![alt text](image.png))
 
 ---
 
