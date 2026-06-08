@@ -31,7 +31,7 @@ With the schema correctly aligned, a *Provision on demand* cycle was triggered f
 The synchronization engine successfully verified the user scope, matched identity metrics between boundaries, and executed the remote resource creation payload API call.
 
 #### Proof of Successful Provisioning:
-![SCIM Provisioning On Demand Success](![alt text](image.png))
+![SCIM Provisioning On Demand Success](![proof](image2.png))
 
 ---
 
