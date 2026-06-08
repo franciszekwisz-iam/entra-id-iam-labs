@@ -11,7 +11,7 @@ This laboratory documents the implementation and testing of automated user provi
 * **Target Environment**: A dedicated SCIM test endpoint was provisioned to act as the target repository.
 * **App Creation**: Created a custom enterprise application (`SCIM-Testing-App`) within Microsoft Entra ID using the *Non-gallery application* integration pathway.
 * **Credential Validation**: Configured the Provisioning Mode to *Automatic*, establishing connectivity by mapping the unique Tenant URL and injecting the secure Bearer Token.
-(assets/image.png)
+![screen](assets/image.png)
 ### 2. Attribute Mapping & Schema Debugging (Troubleshooting Case)
 During the initial *Provision on demand* phase, a critical schema mismatch error was detected (`SystemForCrossDomainIdentityManagementServiceIncompatible`). 
 
