@@ -65,4 +65,5 @@ The final end-to-end integration test successfully verified the modern enterpris
 
 ---
 *This lab effectively mirrors production-grade enterprise cloud security standards. It demonstrates practical competency in containerization, federation handshakes, OpenID Connect specifications, and identity lifecycle automation.*
+![Success](assets/image.png)
 ```
