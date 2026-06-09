@@ -33,8 +33,8 @@ Keycloak was deployed in development mode exposing port `8080` with pre-defined 
 
 ```bash
 docker run -p 8080:8080 \
-  -e KEYCLOAK_ADMIN=admin \
-  -e KEYCLOAK_ADMIN_PASSWORD=admin \
+  -e KEYCLOAK_ADMIN=xxx \
+  -e KEYCLOAK_ADMIN_PASSWORD=xxx \
   quay.io/keycloak/keycloak:latest start-dev
 ```
 
