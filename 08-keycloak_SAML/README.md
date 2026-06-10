@@ -93,4 +93,5 @@ When transitioning this system from a local laboratory (`localhost`) to a live p
 
 ---
 *Configuration Status: Fully verified and operational. Users successfully authenticate via Microsoft Entra ID, and their profiles automatically provision into Keycloak during their first login session.*
-![SAML](image.png)
+
+![SAML](assets/image.png)
