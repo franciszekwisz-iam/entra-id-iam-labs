@@ -13,3 +13,5 @@ This accumulation of residual, unnecessary permissions is known as **Privilege C
 This project implements an automated, detective compliance control to bridge the gap between organizational structure and technical authorization. 
 
 By enforcing a strict **Role-Based Naming Convention** for Active Directory objects (e.g., `DepartmentName-ResourceName`), the infrastructure allows for automated pattern matching. The control mechanism dynamically cross-references a user's authoritative business department against their effective group memberships, flagging cross-departmental access anomalies and logging them into an audit-ready security report for immediate remediation.
+
+![proof](assets/image.png)
